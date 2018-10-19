@@ -1,0 +1,80 @@
+{
+  "kernel": "python",
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "**Recuerde no agregar o quitar celdas en este notebook, ni modificar su tipo. Si lo hace, el sistema automaticamente lo calificar\u00e1 con cero punto cero (0.0)**"
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "Para resolver los problemas presentados, use el siguiente conjunto de datos. Use [gradetool](gradetool.md) para verificar las respuestas del notebook."
+    },
+    {
+      "cell_type": "code",
+      "grade": false,
+      "source": "%%writefile data.tsv\nE\t{b,g,f}\t[jjj#3,bbb#0,ddd#9,ggg#8,hhh#2]\nA\t{a,f,c}\t[ccc#2,ddd#0,aaa#3,hhh#9]\nB\t{f,e,a,c}\t[ddd#2,ggg#5,ccc#6,jjj#1]\nA\t{a,b}\t[hhh#9,iii#5,eee#7,bbb#1]\nC\t{f,g,d,a}\t[iii#6,ddd#5,eee#4,jjj#3]\nA\t{c,d}\t[bbb#2,hhh#0,ccc#4,fff#1,aaa#7]\nA\t{g,d,a}\t[aaa#5,fff#8,ddd#2,iii#0,jjj#7,ccc#1]\nB\t{b,a}\t[fff#3,hhh#1,ddd#2]\nE\t{d,e,a,f}\t[eee#4,ccc#5,iii#9,fff#7,ggg#6,bbb#0]\nB\t{d,b,g,f}\t[bbb#7,jjj#9,fff#5,iii#4,ggg#2,eee#3]\nC\t{d,c,f,b}\t[hhh#6,eee#4,iii#0,fff#2,jjj#1]\nC\t{d,e,a,c}\t[bbb#7,iii#6,ggg#9]\nD\t{g,e,f,b}\t[bbb#9,aaa#3,ccc#6,fff#4,eee#2]\nE\t{c,f}\t[aaa#8,ddd#5,jjj#1]\nB\t{d,b}\t[ccc#0,jjj#6,fff#7,ddd#3,aaa#2]\nD\t{f,e}\t[ccc#0,eee#6,bbb#9,ddd#3]\nE\t{e,b,f}\t[bbb#6,iii#3,hhh#5,fff#4,ggg#9,ddd#2]\nD\t{g,a}\t[hhh#4,jjj#5,ccc#9]\nE\t{e,c,f,a}\t[ccc#1,iii#6,fff#9]\nE\t{e,a}\t[bbb#9,aaa#3,fff#1]\nE\t{e,f}\t[ddd#9,iii#2,aaa#4]\nE\t{c,b,g}\t[ccc#5,fff#8,iii#7]\nD\t{c,f,a}\t[eee#3,jjj#2,ddd#7]\nA\t{f,a,d}\t[jjj#1,ggg#0,ccc#7,ddd#9,bbb#3]\nE\t{c,d}\t[jjj#6,ccc#0,aaa#1,hhh#9,iii#7,ggg#8]\nE\t{e,d,c}\t[fff#3,eee#6,iii#4,bbb#7,ddd#0,ccc#1]\nA\t{a,e,f}\t[fff#0,ddd#5,ccc#4]\nE\t{c,a,g}\t[ggg#6,hhh#3,ddd#9,ccc#0,jjj#7]\nA\t{f,e}\t[hhh#6,jjj#0,eee#5,iii#7,ccc#3]\nC\t{f,c,a,g}\t[eee#1,fff#4,aaa#2,ccc#7,ggg#0,ddd#6]\nA\t{b,f}\t[ccc#6,aaa#9,eee#5,ddd#0,bbb#3]\nD\t{b,f}\t[bbb#7,hhh#1,aaa#6,iii#4,fff#9,ddd#5]\nE\t{a,c}\t[fff#3,ccc#1,ggg#2,eee#5]\nB\t{b,f,c}\t[iii#7,ggg#3,ddd#0,jjj#8,hhh#5,ccc#1]\nB\t{f,a,e}\t[hhh#6,ccc#3,jjj#0,bbb#8,ddd#7]\nD\t{a,f}\t[aaa#0,fff#5,ddd#3]\nB\t{c,a}\t[ddd#5,jjj#2,iii#7,ccc#0,bbb#4]\nC\t{c,a,e,f}\t[eee#0,fff#2,hhh#6]\nE\t{e,d}\t[fff#9,iii#2,eee#0]\nE\t{f,a,d}\t[hhh#8,ggg#3,jjj#5]"
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "# Problema 1\n\nEscriba un programa en Python que transforme el archivo `data.tsv` al formato nativo de Apache Hive; esto es, usando los caracteres que usa Apache Hive internamente para separar los distintos elementos de un registro. \n\n* Llame las columnas `c1`, `c2` y as\u00ed sucesivamente. \n\n* Los campos internos de las columnas se llaman c11 y as\u00ed sucesivamente.\n\n* La columna 2 es un ARRAY y la columna 3 es un MAP."
+    },
+    {
+      "cell_type": "code",
+      "grade": true,
+      "test": false,
+      "execution_count": 2,
+      "points": 5,
+      "source": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "E\u0001b\u0002g\u0002f\u0001jjj\u00033\u0002bbb\u00030\u0002ddd\u00039\u0002ggg\u00038\u0002hhh\u00032\nA\u0001a\u0002f\u0002c\u0001ccc\u00032\u0002ddd\u00030\u0002aaa\u00033\u0002hhh\u00039\nB\u0001f\u0002e\u0002a\u0002c\u0001ddd\u00032\u0002ggg\u00035\u0002ccc\u00036\u0002jjj\u00031\nA\u0001a\u0002b\u0001hhh\u00039\u0002iii\u00035\u0002eee\u00037\u0002bbb\u00031\nC\u0001f\u0002g\u0002d\u0002a\u0001iii\u00036\u0002ddd\u00035\u0002eee\u00034\u0002jjj\u00033\nA\u0001c\u0002d\u0001bbb\u00032\u0002hhh\u00030\u0002ccc\u00034\u0002fff\u00031\u0002aaa\u00037\nA\u0001g\u0002d\u0002a\u0001aaa\u00035\u0002fff\u00038\u0002ddd\u00032\u0002iii\u00030\u0002jjj\u00037\u0002ccc\u00031\nB\u0001b\u0002a\u0001fff\u00033\u0002hhh\u00031\u0002ddd\u00032\nE\u0001d\u0002e\u0002a\u0002f\u0001eee\u00034\u0002ccc\u00035\u0002iii\u00039\u0002fff\u00037\u0002ggg\u00036\u0002bbb\u00030\nB\u0001d\u0002b\u0002g\u0002f\u0001bbb\u00037\u0002jjj\u00039\u0002fff\u00035\u0002iii\u00034\u0002ggg\u00032\u0002eee\u00033\nC\u0001d\u0002c\u0002f\u0002b\u0001hhh\u00036\u0002eee\u00034\u0002iii\u00030\u0002fff\u00032\u0002jjj\u00031\nC\u0001d\u0002e\u0002a\u0002c\u0001bbb\u00037\u0002iii\u00036\u0002ggg\u00039\nD\u0001g\u0002e\u0002f\u0002b\u0001bbb\u00039\u0002aaa\u00033\u0002ccc\u00036\u0002fff\u00034\u0002eee\u00032\nE\u0001c\u0002f\u0001aaa\u00038\u0002ddd\u00035\u0002jjj\u00031\nB\u0001d\u0002b\u0001ccc\u00030\u0002jjj\u00036\u0002fff\u00037\u0002ddd\u00033\u0002aaa\u00032\nD\u0001f\u0002e\u0001ccc\u00030\u0002eee\u00036\u0002bbb\u00039\u0002ddd\u00033\nE\u0001e\u0002b\u0002f\u0001bbb\u00036\u0002iii\u00033\u0002hhh\u00035\u0002fff\u00034\u0002ggg\u00039\u0002ddd\u00032\nD\u0001g\u0002a\u0001hhh\u00034\u0002jjj\u00035\u0002ccc\u00039\nE\u0001e\u0002c\u0002f\u0002a\u0001ccc\u00031\u0002iii\u00036\u0002fff\u00039\nE\u0001e\u0002a\u0001bbb\u00039\u0002aaa\u00033\u0002fff\u00031\nE\u0001e\u0002f\u0001ddd\u00039\u0002iii\u00032\u0002aaa\u00034\nE\u0001c\u0002b\u0002g\u0001ccc\u00035\u0002fff\u00038\u0002iii\u00037\nD\u0001c\u0002f\u0002a\u0001eee\u00033\u0002jjj\u00032\u0002ddd\u00037\nA\u0001f\u0002a\u0002d\u0001jjj\u00031\u0002ggg\u00030\u0002ccc\u00037\u0002ddd\u00039\u0002bbb\u00033\nE\u0001c\u0002d\u0001jjj\u00036\u0002ccc\u00030\u0002aaa\u00031\u0002hhh\u00039\u0002iii\u00037\u0002ggg\u00038\nE\u0001e\u0002d\u0002c\u0001fff\u00033\u0002eee\u00036\u0002iii\u00034\u0002bbb\u00037\u0002ddd\u00030\u0002ccc\u00031\nA\u0001a\u0002e\u0002f\u0001fff\u00030\u0002ddd\u00035\u0002ccc\u00034\nE\u0001c\u0002a\u0002g\u0001ggg\u00036\u0002hhh\u00033\u0002ddd\u00039\u0002ccc\u00030\u0002jjj\u00037\nA\u0001f\u0002e\u0001hhh\u00036\u0002jjj\u00030\u0002eee\u00035\u0002iii\u00037\u0002ccc\u00033\nC\u0001f\u0002c\u0002a\u0002g\u0001eee\u00031\u0002fff\u00034\u0002aaa\u00032\u0002ccc\u00037\u0002ggg\u00030\u0002ddd\u00036\nA\u0001b\u0002f\u0001ccc\u00036\u0002aaa\u00039\u0002eee\u00035\u0002ddd\u00030\u0002bbb\u00033\nD\u0001b\u0002f\u0001bbb\u00037\u0002hhh\u00031\u0002aaa\u00036\u0002iii\u00034\u0002fff\u00039\u0002ddd\u00035\nE\u0001a\u0002c\u0001fff\u00033\u0002ccc\u00031\u0002ggg\u00032\u0002eee\u00035\nB\u0001b\u0002f\u0002c\u0001iii\u00037\u0002ggg\u00033\u0002ddd\u00030\u0002jjj\u00038\u0002hhh\u00035\u0002ccc\u00031\nB\u0001f\u0002a\u0002e\u0001hhh\u00036\u0002ccc\u00033\u0002jjj\u00030\u0002bbb\u00038\u0002ddd\u00037\nD\u0001a\u0002f\u0001aaa\u00030\u0002fff\u00035\u0002ddd\u00033\nB\u0001c\u0002a\u0001ddd\u00035\u0002jjj\u00032\u0002iii\u00037\u0002ccc\u00030\u0002bbb\u00034\nC\u0001c\u0002a\u0002e\u0002f\u0001eee\u00030\u0002fff\u00032\u0002hhh\u00036\nE\u0001e\u0002d\u0001fff\u00039\u0002iii\u00032\u0002eee\u00030\nE\u0001f\u0002a\u0002d\u0001hhh\u00038\u0002ggg\u00033\u0002jjj\u00035"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "# Problema 2\n\nCree la estructura para la tabla anterior en Apache Hive y luego inserterla directamente sin usar los comandos para indicar delimitadores. Use un SELECT para imprimir el contenido de la tabla. La tabla debe llamarse `taller04` y debe ubicarse en la base de datos `default`."
+    },
+    {
+      "cell_type": "code",
+      "grade": false,
+      "source": "%run bd.py\n%hive_init\n%hive_supress_msgs"
+    },
+    {
+      "cell_type": "code",
+      "grade": true,
+      "test": false,
+      "execution_count": 2,
+      "points": 5,
+      "source": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Loading data to table default.t0\nE\t[\"b\",\"g\",\"f\"]\t{\"jjj\":3,\"bbb\":0,\"ddd\":9,\"ggg\":8,\"hhh\":2}\nA\t[\"a\",\"f\",\"c\"]\t{\"ccc\":2,\"ddd\":0,\"aaa\":3,\"hhh\":9}\nB\t[\"f\",\"e\",\"a\",\"c\"]\t{\"ddd\":2,\"ggg\":5,\"ccc\":6,\"jjj\":1}\nA\t[\"a\",\"b\"]\t{\"hhh\":9,\"iii\":5,\"eee\":7,\"bbb\":1}\nC\t[\"f\",\"g\",\"d\",\"a\"]\t{\"iii\":6,\"ddd\":5,\"eee\":4,\"jjj\":3}\nA\t[\"c\",\"d\"]\t{\"bbb\":2,\"hhh\":0,\"ccc\":4,\"fff\":1,\"aaa\":7}\nA\t[\"g\",\"d\",\"a\"]\t{\"aaa\":5,\"fff\":8,\"ddd\":2,\"iii\":0,\"jjj\":7,\"ccc\":1}\nB\t[\"b\",\"a\"]\t{\"fff\":3,\"hhh\":1,\"ddd\":2}\nE\t[\"d\",\"e\",\"a\",\"f\"]\t{\"eee\":4,\"ccc\":5,\"iii\":9,\"fff\":7,\"ggg\":6,\"bbb\":0}\nB\t[\"d\",\"b\",\"g\",\"f\"]\t{\"bbb\":7,\"jjj\":9,\"fff\":5,\"iii\":4,\"ggg\":2,\"eee\":3}\nC\t[\"d\",\"c\",\"f\",\"b\"]\t{\"hhh\":6,\"eee\":4,\"iii\":0,\"fff\":2,\"jjj\":1}\nC\t[\"d\",\"e\",\"a\",\"c\"]\t{\"bbb\":7,\"iii\":6,\"ggg\":9}\nD\t[\"g\",\"e\",\"f\",\"b\"]\t{\"bbb\":9,\"aaa\":3,\"ccc\":6,\"fff\":4,\"eee\":2}\nE\t[\"c\",\"f\"]\t{\"aaa\":8,\"ddd\":5,\"jjj\":1}\nB\t[\"d\",\"b\"]\t{\"ccc\":0,\"jjj\":6,\"fff\":7,\"ddd\":3,\"aaa\":2}\nD\t[\"f\",\"e\"]\t{\"ccc\":0,\"eee\":6,\"bbb\":9,\"ddd\":3}\nE\t[\"e\",\"b\",\"f\"]\t{\"bbb\":6,\"iii\":3,\"hhh\":5,\"fff\":4,\"ggg\":9,\"ddd\":2}\nD\t[\"g\",\"a\"]\t{\"hhh\":4,\"jjj\":5,\"ccc\":9}\nE\t[\"e\",\"c\",\"f\",\"a\"]\t{\"ccc\":1,\"iii\":6,\"fff\":9}\nE\t[\"e\",\"a\"]\t{\"bbb\":9,\"aaa\":3,\"fff\":1}\nE\t[\"e\",\"f\"]\t{\"ddd\":9,\"iii\":2,\"aaa\":4}\nE\t[\"c\",\"b\",\"g\"]\t{\"ccc\":5,\"fff\":8,\"iii\":7}\nD\t[\"c\",\"f\",\"a\"]\t{\"eee\":3,\"jjj\":2,\"ddd\":7}\nA\t[\"f\",\"a\",\"d\"]\t{\"jjj\":1,\"ggg\":0,\"ccc\":7,\"ddd\":9,\"bbb\":3}\nE\t[\"c\",\"d\"]\t{\"jjj\":6,\"ccc\":0,\"aaa\":1,\"hhh\":9,\"iii\":7,\"ggg\":8}\nE\t[\"e\",\"d\",\"c\"]\t{\"fff\":3,\"eee\":6,\"iii\":4,\"bbb\":7,\"ddd\":0,\"ccc\":1}\nA\t[\"a\",\"e\",\"f\"]\t{\"fff\":0,\"ddd\":5,\"ccc\":4}\nE\t[\"c\",\"a\",\"g\"]\t{\"ggg\":6,\"hhh\":3,\"ddd\":9,\"ccc\":0,\"jjj\":7}\nA\t[\"f\",\"e\"]\t{\"hhh\":6,\"jjj\":0,\"eee\":5,\"iii\":7,\"ccc\":3}\nC\t[\"f\",\"c\",\"a\",\"g\"]\t{\"eee\":1,\"fff\":4,\"aaa\":2,\"ccc\":7,\"ggg\":0,\"ddd\":6}\nA\t[\"b\",\"f\"]\t{\"ccc\":6,\"aaa\":9,\"eee\":5,\"ddd\":0,\"bbb\":3}\nD\t[\"b\",\"f\"]\t{\"bbb\":7,\"hhh\":1,\"aaa\":6,\"iii\":4,\"fff\":9,\"ddd\":5}\nE\t[\"a\",\"c\"]\t{\"fff\":3,\"ccc\":1,\"ggg\":2,\"eee\":5}\nB\t[\"b\",\"f\",\"c\"]\t{\"iii\":7,\"ggg\":3,\"ddd\":0,\"jjj\":8,\"hhh\":5,\"ccc\":1}\nB\t[\"f\",\"a\",\"e\"]\t{\"hhh\":6,\"ccc\":3,\"jjj\":0,\"bbb\":8,\"ddd\":7}\nD\t[\"a\",\"f\"]\t{\"aaa\":0,\"fff\":5,\"ddd\":3}\nB\t[\"c\",\"a\"]\t{\"ddd\":5,\"jjj\":2,\"iii\":7,\"ccc\":0,\"bbb\":4}\nC\t[\"c\",\"a\",\"e\",\"f\"]\t{\"eee\":0,\"fff\":2,\"hhh\":6}\nE\t[\"e\",\"d\"]\t{\"fff\":9,\"iii\":2,\"eee\":0}\nE\t[\"f\",\"a\",\"d\"]\t{\"hhh\":8,\"ggg\":3,\"jjj\":5}\n"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "---"
+    },
+    {
+      "cell_type": "code",
+      "grade": false,
+      "source": "!rm data.* *.log"
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "---"
+    }
+  ]
+}

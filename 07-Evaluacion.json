@@ -1,0 +1,100 @@
+{
+  "kernel": "python",
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "**Recuerde no agregar o quitar celdas en este notebook, ni modificar su tipo. Si lo hace, el sistema automaticamente lo calificar\u00e1 con cero punto cero (0.0)**"
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "Para resolver los problemas presentados, use el siguiente conjunto de datos. Use [gradetool](gradetool.md) para verificar las respuestas del notebook."
+    },
+    {
+      "cell_type": "code",
+      "grade": false,
+      "source": "%%writefile data.tsv\nE\tb,g,f\tjjj#3,bbb#0,ddd#9,ggg#8,hhh#2\nA\ta,f,c\tccc#2,ddd#0,aaa#3,hhh#9\nB\tf,e,a,c\tddd#2,ggg#5,ccc#6,jjj#1\nA\ta,b\thhh#9,iii#5,eee#7,bbb#1\nC\tf,g,d,a\tiii#6,ddd#5,eee#4,jjj#3\nA\tc,d\tbbb#2,hhh#0,ccc#4,fff#1,aaa#7\nA\tg,d,a\taaa#5,fff#8,ddd#2,iii#0,jjj#7,ccc#1\nB\tb,a\tfff#3,hhh#1,ddd#2\nE\td,e,a,f\teee#4,ccc#5,iii#9,fff#7,ggg#6,bbb#0\nB\td,b,g,f\tbbb#7,jjj#9,fff#5,iii#4,ggg#2,eee#3\nC\td,c,f,b\thhh#6,eee#4,iii#0,fff#2,jjj#1\nC\td,e,a,c\tbbb#7,iii#6,ggg#9\nD\tg,e,f,b\tbbb#9,aaa#3,ccc#6,fff#4,eee#2\nE\tc,f\taaa#8,ddd#5,jjj#1\nB\td,b\tccc#0,jjj#6,fff#7,ddd#3,aaa#2\nD\tf,e\tccc#0,eee#6,bbb#9,ddd#3\nE\te,b,f\tbbb#6,iii#3,hhh#5,fff#4,ggg#9,ddd#2\nD\tg,a\thhh#4,jjj#5,ccc#9\nE\te,c,f,a\tccc#1,iii#6,fff#9\nE\te,a\tbbb#9,aaa#3,fff#1\nE\te,f\tddd#9,iii#2,aaa#4\nE\tc,b,g\tccc#5,fff#8,iii#7\nD\tc,f,a\teee#3,jjj#2,ddd#7\nA\tf,a,d\tjjj#1,ggg#0,ccc#7,ddd#9,bbb#3\nE\tc,d\tjjj#6,ccc#0,aaa#1,hhh#9,iii#7,ggg#8\nE\te,d,c\tfff#3,eee#6,iii#4,bbb#7,ddd#0,ccc#1\nA\ta,e,f\tfff#0,ddd#5,ccc#4\nE\tc,a,g\tggg#6,hhh#3,ddd#9,ccc#0,jjj#7\nA\tf,e\thhh#6,jjj#0,eee#5,iii#7,ccc#3\nC\tf,c,a,g\teee#1,fff#4,aaa#2,ccc#7,ggg#0,ddd#6\nA\tb,f\tccc#6,aaa#9,eee#5,ddd#0,bbb#3\nD\tb,f\tbbb#7,hhh#1,aaa#6,iii#4,fff#9,ddd#5\nE\ta,c\tfff#3,ccc#1,ggg#2,eee#5\nB\tb,f,c\tiii#7,ggg#3,ddd#0,jjj#8,hhh#5,ccc#1\nB\tf,a,e\thhh#6,ccc#3,jjj#0,bbb#8,ddd#7\nD\ta,f\taaa#0,fff#5,ddd#3\nB\tc,a\tddd#5,jjj#2,iii#7,ccc#0,bbb#4\nC\tc,a,e,f\teee#0,fff#2,hhh#6\nE\te,d\tfff#9,iii#2,eee#0\nE\tf,a,d\thhh#8,ggg#3,jjj#5"
+    },
+    {
+      "cell_type": "code",
+      "grade": false,
+      "source": "%run bd.py\n%hive_init"
+    },
+    {
+      "cell_type": "code",
+      "grade": false,
+      "source": "%%hive\nDROP TABLE IF EXISTS t0;\nCREATE TABLE t0 (\n    c1 STRING,\n    c2 ARRAY<CHAR(1)>, \n    c3 MAP<STRING, INT>\n)\nROW FORMAT DELIMITED \nFIELDS TERMINATED BY '\\t'\nCOLLECTION ITEMS TERMINATED BY ','\nMAP KEYS TERMINATED BY '#'\nLINES TERMINATED BY '\\n';\n\nLOAD DATA LOCAL INPATH 'data.tsv' INTO TABLE t0;\n\n-- SELECT * FROM t0;"
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "# Problema 1\n\nEscriba una consulta que calcule la cantidad de registros por clave de la columna 3. En otras palabras, cu\u00e1ntos registros hay que tengan la clave `aaa`?"
+    },
+    {
+      "cell_type": "code",
+      "grade": true,
+      "test": false,
+      "execution_count": 4,
+      "points": 5,
+      "source": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Query ID = jdvelasq_20181019101054_6475cb30-e46c-44db-9db6-4a4b36a6196f\nTotal jobs = 1\nLaunching Job 1 out of 1\nNumber of reduce tasks not specified. Estimated from input data size: 1\nIn order to change the average load for a reducer (in bytes):\n  set hive.exec.reducers.bytes.per.reducer=<number>\nIn order to limit the maximum number of reducers:\n  set hive.exec.reducers.max=<number>\nIn order to set a constant number of reducers:\n  set mapreduce.job.reduces=<number>\nJob running in-process (local Hadoop)\n2018-10-19 10:10:57,023 Stage-1 map = 100%,  reduce = 100%\nEnded Job = job_local1828598947_0001\nMapReduce Jobs Launched: \nStage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS\nTotal MapReduce CPU Time Spent: 0 msec\nOK\naaa\t13\nbbb\t16\nccc\t23\nddd\t23\neee\t15\nfff\t20\nggg\t13\nhhh\t16\niii\t18\njjj\t18\nTime taken: 2.525 seconds, Fetched: 10 row(s)\n"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "# Problema 2\n\nEscriba una consulta que retorne la primera columna, la cantidad de elementos en la columna 2 y la cantidad de elementos en la columna 3"
+    },
+    {
+      "cell_type": "code",
+      "grade": true,
+      "test": false,
+      "execution_count": 5,
+      "points": 5,
+      "source": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "OK\nE\t3\t5\nA\t3\t4\nB\t4\t4\nA\t2\t4\nC\t4\t4\nA\t2\t5\nA\t3\t6\nB\t2\t3\nE\t4\t6\nB\t4\t6\nC\t4\t5\nC\t4\t3\nD\t4\t5\nE\t2\t3\nB\t2\t5\nD\t2\t4\nE\t3\t6\nD\t2\t3\nE\t4\t3\nE\t2\t3\nE\t2\t3\nE\t3\t3\nD\t3\t3\nA\t3\t5\nE\t2\t6\nE\t3\t6\nA\t3\t3\nE\t3\t5\nA\t2\t5\nC\t4\t6\nA\t2\t5\nD\t2\t6\nE\t2\t4\nB\t3\t6\nB\t3\t5\nD\t2\t3\nB\t2\t5\nC\t4\t3\nE\t2\t3\nE\t3\t3\nTime taken: 1.256 seconds, Fetched: 40 row(s)\n"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "# Problema 3\n\nEscriba una consulta que compute la cantidad de registros por letra de la columna 2 y clave de la columna 3; esto es, por ejemplo, la cantidad de registros en tienen la letra `a` en la columna 2 y la clave `aaa` en la columna 3 es:\n\n     a    aaa    5"
+    },
+    {
+      "cell_type": "code",
+      "grade": true,
+      "test": false,
+      "execution_count": 6,
+      "points": 5,
+      "source": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Query ID = jdvelasq_20181019101059_ea84157c-15ab-4f96-b8e5-227751a29763\nTotal jobs = 1\nLaunching Job 1 out of 1\nNumber of reduce tasks not specified. Estimated from input data size: 1\nIn order to change the average load for a reducer (in bytes):\n  set hive.exec.reducers.bytes.per.reducer=<number>\nIn order to limit the maximum number of reducers:\n  set hive.exec.reducers.max=<number>\nIn order to set a constant number of reducers:\n  set mapreduce.job.reduces=<number>\nJob running in-process (local Hadoop)\n2018-10-19 10:11:01,284 Stage-1 map = 100%,  reduce = 100%\nEnded Job = job_local982026359_0002\nMapReduce Jobs Launched: \nStage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS\nTotal MapReduce CPU Time Spent: 0 msec\nOK\na\taaa\t5\na\tbbb\t7\na\tccc\t13\na\tddd\t13\na\teee\t7\na\tfff\t10\na\tggg\t8\na\thhh\t8\na\tiii\t7\na\tjjj\t10\nb\taaa\t4\nb\tbbb\t7\nb\tccc\t5\nb\tddd\t7\nb\teee\t5\nb\tfff\t8\nb\tggg\t4\nb\thhh\t7\nb\tiii\t7\nb\tjjj\t5\nc\taaa\t5\nc\tbbb\t4\nc\tccc\t12\nc\tddd\t9\nc\teee\t6\nc\tfff\t8\nc\tggg\t7\nc\thhh\t7\nc\tiii\t8\nc\tjjj\t8\nd\taaa\t4\nd\tbbb\t6\nd\tccc\t7\nd\tddd\t5\nd\teee\t6\nd\tfff\t8\nd\tggg\t6\nd\thhh\t4\nd\tiii\t9\nd\tjjj\t8\ne\taaa\t3\ne\tbbb\t8\ne\tccc\t9\ne\tddd\t7\ne\teee\t7\ne\tfff\t9\ne\tggg\t4\ne\thhh\t4\ne\tiii\t8\ne\tjjj\t3\nf\taaa\t8\nf\tbbb\t10\nf\tccc\t13\nf\tddd\t17\nf\teee\t11\nf\tfff\t11\nf\tggg\t9\nf\thhh\t10\nf\tiii\t10\nf\tjjj\t12\ng\taaa\t3\ng\tbbb\t3\ng\tccc\t6\ng\tddd\t5\ng\teee\t4\ng\tfff\t5\ng\tggg\t4\ng\thhh\t3\ng\tiii\t4\ng\tjjj\t6\nTime taken: 1.62 seconds, Fetched: 70 row(s)\n"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "grade": false,
+      "source": "---"
+    },
+    {
+      "cell_type": "code",
+      "grade": false,
+      "source": "!rm data.* pig_*"
+    }
+  ]
+}
