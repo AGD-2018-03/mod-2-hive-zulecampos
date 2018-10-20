@@ -19,7 +19,7 @@
     {
       "cell_type": "code",
       "grade": false,
-      "source": "%run bd.py\n%hive_init"
+      "source": "%load_ext bigdata\n%hive_init"
     },
     {
       "cell_type": "code",
@@ -42,7 +42,7 @@
         {
           "name": "stdout",
           "output_type": "stream",
-          "text": "Query ID = jdvelasq_20181019101054_6475cb30-e46c-44db-9db6-4a4b36a6196f\nTotal jobs = 1\nLaunching Job 1 out of 1\nNumber of reduce tasks not specified. Estimated from input data size: 1\nIn order to change the average load for a reducer (in bytes):\n  set hive.exec.reducers.bytes.per.reducer=<number>\nIn order to limit the maximum number of reducers:\n  set hive.exec.reducers.max=<number>\nIn order to set a constant number of reducers:\n  set mapreduce.job.reduces=<number>\nJob running in-process (local Hadoop)\n2018-10-19 10:10:57,023 Stage-1 map = 100%,  reduce = 100%\nEnded Job = job_local1828598947_0001\nMapReduce Jobs Launched: \nStage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS\nTotal MapReduce CPU Time Spent: 0 msec\nOK\naaa\t13\nbbb\t16\nccc\t23\nddd\t23\neee\t15\nfff\t20\nggg\t13\nhhh\t16\niii\t18\njjj\t18\nTime taken: 2.525 seconds, Fetched: 10 row(s)\n"
+          "text": "aaa\t13\nbbb\t16\nccc\t23\nddd\t23\neee\t15\nfff\t20\nggg\t13\nhhh\t16\niii\t18\njjj\t18\n"
         }
       ]
     },
@@ -62,7 +62,7 @@
         {
           "name": "stdout",
           "output_type": "stream",
-          "text": "OK\nE\t3\t5\nA\t3\t4\nB\t4\t4\nA\t2\t4\nC\t4\t4\nA\t2\t5\nA\t3\t6\nB\t2\t3\nE\t4\t6\nB\t4\t6\nC\t4\t5\nC\t4\t3\nD\t4\t5\nE\t2\t3\nB\t2\t5\nD\t2\t4\nE\t3\t6\nD\t2\t3\nE\t4\t3\nE\t2\t3\nE\t2\t3\nE\t3\t3\nD\t3\t3\nA\t3\t5\nE\t2\t6\nE\t3\t6\nA\t3\t3\nE\t3\t5\nA\t2\t5\nC\t4\t6\nA\t2\t5\nD\t2\t6\nE\t2\t4\nB\t3\t6\nB\t3\t5\nD\t2\t3\nB\t2\t5\nC\t4\t3\nE\t2\t3\nE\t3\t3\nTime taken: 1.256 seconds, Fetched: 40 row(s)\n"
+          "text": "E\t3\t5\nA\t3\t4\nB\t4\t4\nA\t2\t4\nC\t4\t4\nA\t2\t5\nA\t3\t6\nB\t2\t3\nE\t4\t6\nB\t4\t6\nC\t4\t5\nC\t4\t3\nD\t4\t5\nE\t2\t3\nB\t2\t5\nD\t2\t4\nE\t3\t6\nD\t2\t3\nE\t4\t3\nE\t2\t3\nE\t2\t3\nE\t3\t3\nD\t3\t3\nA\t3\t5\nE\t2\t6\nE\t3\t6\nA\t3\t3\nE\t3\t5\nA\t2\t5\nC\t4\t6\nA\t2\t5\nD\t2\t6\nE\t2\t4\nB\t3\t6\nB\t3\t5\nD\t2\t3\nB\t2\t5\nC\t4\t3\nE\t2\t3\nE\t3\t3\n"
         }
       ]
     },
@@ -82,7 +82,7 @@
         {
           "name": "stdout",
           "output_type": "stream",
-          "text": "Query ID = jdvelasq_20181019101059_ea84157c-15ab-4f96-b8e5-227751a29763\nTotal jobs = 1\nLaunching Job 1 out of 1\nNumber of reduce tasks not specified. Estimated from input data size: 1\nIn order to change the average load for a reducer (in bytes):\n  set hive.exec.reducers.bytes.per.reducer=<number>\nIn order to limit the maximum number of reducers:\n  set hive.exec.reducers.max=<number>\nIn order to set a constant number of reducers:\n  set mapreduce.job.reduces=<number>\nJob running in-process (local Hadoop)\n2018-10-19 10:11:01,284 Stage-1 map = 100%,  reduce = 100%\nEnded Job = job_local982026359_0002\nMapReduce Jobs Launched: \nStage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS\nTotal MapReduce CPU Time Spent: 0 msec\nOK\na\taaa\t5\na\tbbb\t7\na\tccc\t13\na\tddd\t13\na\teee\t7\na\tfff\t10\na\tggg\t8\na\thhh\t8\na\tiii\t7\na\tjjj\t10\nb\taaa\t4\nb\tbbb\t7\nb\tccc\t5\nb\tddd\t7\nb\teee\t5\nb\tfff\t8\nb\tggg\t4\nb\thhh\t7\nb\tiii\t7\nb\tjjj\t5\nc\taaa\t5\nc\tbbb\t4\nc\tccc\t12\nc\tddd\t9\nc\teee\t6\nc\tfff\t8\nc\tggg\t7\nc\thhh\t7\nc\tiii\t8\nc\tjjj\t8\nd\taaa\t4\nd\tbbb\t6\nd\tccc\t7\nd\tddd\t5\nd\teee\t6\nd\tfff\t8\nd\tggg\t6\nd\thhh\t4\nd\tiii\t9\nd\tjjj\t8\ne\taaa\t3\ne\tbbb\t8\ne\tccc\t9\ne\tddd\t7\ne\teee\t7\ne\tfff\t9\ne\tggg\t4\ne\thhh\t4\ne\tiii\t8\ne\tjjj\t3\nf\taaa\t8\nf\tbbb\t10\nf\tccc\t13\nf\tddd\t17\nf\teee\t11\nf\tfff\t11\nf\tggg\t9\nf\thhh\t10\nf\tiii\t10\nf\tjjj\t12\ng\taaa\t3\ng\tbbb\t3\ng\tccc\t6\ng\tddd\t5\ng\teee\t4\ng\tfff\t5\ng\tggg\t4\ng\thhh\t3\ng\tiii\t4\ng\tjjj\t6\nTime taken: 1.62 seconds, Fetched: 70 row(s)\n"
+          "text": "a\taaa\t5\na\tbbb\t7\na\tccc\t13\na\tddd\t13\na\teee\t7\na\tfff\t10\na\tggg\t8\na\thhh\t8\na\tiii\t7\na\tjjj\t10\nb\taaa\t4\nb\tbbb\t7\nb\tccc\t5\nb\tddd\t7\nb\teee\t5\nb\tfff\t8\nb\tggg\t4\nb\thhh\t7\nb\tiii\t7\nb\tjjj\t5\nc\taaa\t5\nc\tbbb\t4\nc\tccc\t12\nc\tddd\t9\nc\teee\t6\nc\tfff\t8\nc\tggg\t7\nc\thhh\t7\nc\tiii\t8\nc\tjjj\t8\nd\taaa\t4\nd\tbbb\t6\nd\tccc\t7\nd\tddd\t5\nd\teee\t6\nd\tfff\t8\nd\tggg\t6\nd\thhh\t4\nd\tiii\t9\nd\tjjj\t8\ne\taaa\t3\ne\tbbb\t8\ne\tccc\t9\ne\tddd\t7\ne\teee\t7\ne\tfff\t9\ne\tggg\t4\ne\thhh\t4\ne\tiii\t8\ne\tjjj\t3\nf\taaa\t8\nf\tbbb\t10\nf\tccc\t13\nf\tddd\t17\nf\teee\t11\nf\tfff\t11\nf\tggg\t9\nf\thhh\t10\nf\tiii\t10\nf\tjjj\t12\ng\taaa\t3\ng\tbbb\t3\ng\tccc\t6\ng\tddd\t5\ng\teee\t4\ng\tfff\t5\ng\tggg\t4\ng\thhh\t3\ng\tiii\t4\ng\tjjj\t6\n"
         }
       ]
     },

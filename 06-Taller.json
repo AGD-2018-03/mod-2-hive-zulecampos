@@ -19,7 +19,7 @@
     {
       "cell_type": "code",
       "grade": false,
-      "source": "%run bd.py\n%hive_init\n%hive_supress_msgs"
+      "source": "%load_ext bigdata\n%hive_init"
     },
     {
       "cell_type": "markdown",
@@ -37,7 +37,7 @@
         {
           "name": "stdout",
           "output_type": "stream",
-          "text": "Loading data to table default.t0\nQuery ID = jdvelasq_20181018202626_252a8348-1ce0-4ed2-9af6-cb470f1defbe\nTotal jobs = 1\nLaunching Job 1 out of 1\nNumber of reduce tasks not specified. Estimated from input data size: 1\nIn order to change the average load for a reducer (in bytes):\n  set hive.exec.reducers.bytes.per.reducer=<number>\nIn order to limit the maximum number of reducers:\n  set hive.exec.reducers.max=<number>\nIn order to set a constant number of reducers:\n  set mapreduce.job.reduces=<number>\nJob running in-process (local Hadoop)\n2018-10-18 20:26:30,049 Stage-1 map = 100%,  reduce = 100%\nEnded Job = job_local104939316_0001\nMapReduce Jobs Launched: \nStage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS\nTotal MapReduce CPU Time Spent: 0 msec\nA\t12\nB\t10\nC\t4\nD\t1\nE\t13\n"
+          "text": "A\t12\nB\t10\nC\t4\nD\t1\nE\t13\n"
         }
       ]
     },
@@ -50,16 +50,10 @@
       "cell_type": "code",
       "grade": true,
       "test": false,
-      "execution_count": 3,
+      "execution_count": 4,
       "points": 5,
       "source": null,
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": "Query ID = jdvelasq_20181017155046_fd90fe84-308f-4e5f-8770-1d0e8ce90ac3\nTotal jobs = 1\nLaunching Job 1 out of 1\nNumber of reduce tasks determined at compile time: 1\nIn order to change the average load for a reducer (in bytes):\n  set hive.exec.reducers.bytes.per.reducer=<number>\nIn order to limit the maximum number of reducers:\n  set hive.exec.reducers.max=<number>\nIn order to set a constant number of reducers:\n  set mapreduce.job.reduces=<number>\nJob running in-process (local Hadoop)\n2018-10-17 15:50:48,475 Stage-1 map = 100%,  reduce = 100%\nEnded Job = job_local720092787_0002\nMapReduce Jobs Launched: \nStage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS\nTotal MapReduce CPU Time Spent: 0 msec\nA\t1990-10-06\t10\nA\t1990-09-05\t11\nA\t1988-04-27\t12\nA\t1990-08-31\t12\nA\t1997-12-15\t13\nA\t1994-10-25\t13\nA\t1993-01-11\t14\nA\t1992-08-22\t14\nA\t1990-09-26\t14\nA\t1993-05-08\t16\nA\t1990-07-22\t18\nA\t1992-09-19\t18\nB\t1995-08-23\t10\nB\t1999-06-11\t12\nB\t1998-11-22\t13\nB\t1999-10-21\t13\nB\t1997-04-09\t14\nB\t1995-09-06\t14\nB\t1993-03-02\t14\nB\t1999-08-28\t14\nB\t1991-10-01\t15\nB\t1994-08-30\t17\nC\t1994-01-25\t6\nC\t1994-07-27\t7\nC\t1991-02-12\t13\nC\t1994-09-09\t15\nD\t1990-10-10\t15\nE\t1994-02-14\t5\nE\t1999-09-10\t11\nE\t1999-12-06\t12\nE\t1993-01-27\t13\nE\t1991-02-18\t14\nE\t1999-01-14\t15\nE\t1990-05-03\t16\nE\t1998-09-14\t16\nE\t1985-02-12\t16\nE\t1995-04-25\t16\nE\t1993-07-21\t17\nE\t1990-02-09\t18\nE\t1993-12-27\t18\n"
-        }
-      ]
+      "outputs": []
     },
     {
       "cell_type": "markdown",
@@ -70,14 +64,14 @@
       "cell_type": "code",
       "grade": true,
       "test": false,
-      "execution_count": 4,
+      "execution_count": 5,
       "points": 5,
       "source": null,
       "outputs": [
         {
           "name": "stdout",
           "output_type": "stream",
-          "text": "Query ID = jdvelasq_20181018202809_770184d9-281c-4c99-a618-3697cb8b3d8b\nTotal jobs = 1\nLaunching Job 1 out of 1\nNumber of reduce tasks determined at compile time: 1\nIn order to change the average load for a reducer (in bytes):\n  set hive.exec.reducers.bytes.per.reducer=<number>\nIn order to limit the maximum number of reducers:\n  set hive.exec.reducers.max=<number>\nIn order to set a constant number of reducers:\n  set mapreduce.job.reduces=<number>\nJob running in-process (local Hadoop)\n2018-10-18 20:28:11,164 Stage-1 map = 100%,  reduce = 100%\nEnded Job = job_local1387023437_0002\nMapReduce Jobs Launched: \nStage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS\nTotal MapReduce CPU Time Spent: 0 msec\n5\n6\n7\n10\n10\n"
+          "text": "5\n6\n7\n10\n10\n"
         }
       ]
     },
